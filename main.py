@@ -1,4 +1,11 @@
 from PIL import Image, ImageFilter, ImageEnhance
+from PyQt5 import QtWidgets, uic
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QMainWindow, QMessageBox, QListWidgetItem
+from qt_material import apply_stylesheet
+import sys
+
+
 
 #with Image.open("silas-schneider-BBoq3MaPNoM-unsplash.jpg") as img:
     #print("Розмір:", img.size)
@@ -30,11 +37,19 @@ from PIL import Image, ImageFilter, ImageEnhance
     #color_img.show()
 
 
-class ImageEditor:
+class Ui(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(Ui, self).__init__()
+        uic.loadUi('window.ui', self)
+        
+
+class ImageEditor(QtWidgets.QMainWindow):
     def __init__(self):
         self.image = None
         self.original = None
         self.save_path = 'edited/'
+        self.ui = Ui()
+        self.ui.show()
         
     
     def open(self, filename):
@@ -42,10 +57,10 @@ class ImageEditor:
         self.original = self.image
 
     def do_black_white(self):
-        self.image = img.convert("L")
+        self.image = self.image.convert("L")
 
     def do_blur(self):
-        self.image = img.filter(ImageFilter.BLUR)
+        self.image = self.image.filter(ImageFilter.BLUR)
 
     def rotate_90(self):
         self.image = self.image.transpose(Image.ROTATE_90)
@@ -54,7 +69,7 @@ class ImageEditor:
         self.image = self.image.filter(ImageFilter.SHARPEN)
 
 
+app = QApplication([])
 editor = ImageEditor()
-editor.open("taylor-friehl-Jjp5HgaBkeI-unsplash.jpg")
-editor.do_black_white()
-editor.image.save("result.jpg")
+apply_stylesheet(app, theme='dark_teal.xml')
+app.exec_()

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>791</width>
+    <height>617</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Відкрити папку</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listWidget">
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../Downloads/trash (1).svg</normaloff>../../Downloads/trash (1).svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../Downloads/device-floppy (1).svg</normaloff>../../Downloads/device-floppy (1).svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../Downloads/arrow-narrow-left.svg</normaloff>../../Downloads/arrow-narrow-left.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../Downloads/rotate-2.svg</normaloff>../../Downloads/rotate-2.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../Downloads/rotate-clockwise-2.svg</normaloff>../../Downloads/rotate-clockwise-2.svg</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="current_image">
+        <property name="minimumSize">
+         <size>
+          <width>600</width>
+          <height>550</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Картинка</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>791</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Редагування</string>
+    </property>
+    <addaction name="action_4"/>
+    <addaction name="action_5"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Ефекти</string>
+    </property>
+    <addaction name="action_6"/>
+    <addaction name="action_9"/>
+    <addaction name="action_11"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Корекція</string>
+    </property>
+    <addaction name="action_12"/>
+    <addaction name="action_13"/>
+    <addaction name="action_14"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>Відкрити файл</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Відкрити папку</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>Зберегти</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Скасувати </string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>Скасувати зміни</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>ЧБ</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>Контраст</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>Різкість</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>Розмиття</string>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="text">
+    <string>Яскравість</string>
+   </property>
+  </action>
+  <action name="action_11">
+   <property name="text">
+    <string>Різкість</string>
+   </property>
+  </action>
+  <action name="action_12">
+   <property name="text">
+    <string>Контрастність</string>
+   </property>
+  </action>
+  <action name="action_13">
+   <property name="text">
+    <string>Насиченість</string>
+   </property>
+  </action>
+  <action name="action_14">
+   <property name="text">
+    <string>Яскравість</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
