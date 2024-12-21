@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>791</width>
-    <height>617</height>
+    <height>643</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,9 +19,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_3"/>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="col_left">
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="folder_btn">
         <property name="maximumSize">
          <size>
           <width>200</width>
@@ -34,7 +34,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QListWidget" name="listWidget">
+       <widget class="QListWidget" name="image_list">
         <property name="maximumSize">
          <size>
           <width>200</width>
@@ -46,7 +46,7 @@
      </layout>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="col_right">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <property name="topMargin">
@@ -56,7 +56,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_6">
+         <widget class="QPushButton" name="del_btn">
           <property name="text">
            <string/>
           </property>
@@ -67,7 +67,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="save_btn">
           <property name="text">
            <string/>
           </property>
@@ -78,7 +78,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="back_btn">
           <property name="text">
            <string/>
           </property>
@@ -102,7 +102,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="rotate_left_btn">
           <property name="text">
            <string/>
           </property>
@@ -113,7 +113,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_5">
+         <widget class="QPushButton" name="rotate_right_btn">
           <property name="text">
            <string/>
           </property>
@@ -151,69 +151,69 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menu_file">
     <property name="title">
      <string>Файл</string>
     </property>
-    <addaction name="action"/>
-    <addaction name="action_2"/>
-    <addaction name="action_3"/>
+    <addaction name="open_file"/>
+    <addaction name="open_folder"/>
+    <addaction name="save"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
+   <widget class="QMenu" name="menu_edit">
     <property name="title">
      <string>Редагування</string>
     </property>
-    <addaction name="action_4"/>
-    <addaction name="action_5"/>
+    <addaction name="cancel"/>
+    <addaction name="reset"/>
    </widget>
-   <widget class="QMenu" name="menu_3">
+   <widget class="QMenu" name="menu_effects">
     <property name="title">
      <string>Ефекти</string>
     </property>
-    <addaction name="action_6"/>
-    <addaction name="action_9"/>
-    <addaction name="action_11"/>
+    <addaction name="black_white"/>
+    <addaction name="blur"/>
+    <addaction name="sharpen"/>
    </widget>
-   <widget class="QMenu" name="menu_4">
+   <widget class="QMenu" name="menu_correction">
     <property name="title">
      <string>Корекція</string>
     </property>
-    <addaction name="action_12"/>
-    <addaction name="action_13"/>
-    <addaction name="action_14"/>
+    <addaction name="contrast"/>
+    <addaction name="saturation"/>
+    <addaction name="brightness"/>
    </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
-   <addaction name="menu_4"/>
+   <addaction name="menu_file"/>
+   <addaction name="menu_edit"/>
+   <addaction name="menu_effects"/>
+   <addaction name="menu_correction"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <action name="open_file">
    <property name="text">
     <string>Відкрити файл</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="open_folder">
    <property name="text">
     <string>Відкрити папку</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="save">
    <property name="text">
     <string>Зберегти</string>
    </property>
   </action>
-  <action name="action_4">
+  <action name="cancel">
    <property name="text">
     <string>Скасувати </string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="reset">
    <property name="text">
     <string>Скасувати зміни</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="black_white">
    <property name="text">
     <string>ЧБ</string>
    </property>
@@ -228,7 +228,7 @@
     <string>Різкість</string>
    </property>
   </action>
-  <action name="action_9">
+  <action name="blur">
    <property name="text">
     <string>Розмиття</string>
    </property>
@@ -238,22 +238,22 @@
     <string>Яскравість</string>
    </property>
   </action>
-  <action name="action_11">
+  <action name="sharpen">
    <property name="text">
     <string>Різкість</string>
    </property>
   </action>
-  <action name="action_12">
+  <action name="contrast">
    <property name="text">
     <string>Контрастність</string>
    </property>
   </action>
-  <action name="action_13">
+  <action name="saturation">
    <property name="text">
     <string>Насиченість</string>
    </property>
   </action>
-  <action name="action_14">
+  <action name="brightness">
    <property name="text">
     <string>Яскравість</string>
    </property>
