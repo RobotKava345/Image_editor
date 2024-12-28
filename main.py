@@ -68,6 +68,7 @@ class ImageEditor(QtWidgets.QMainWindow):
 
 
     def open_folder(self):
+        print("12121")
         self.workdir = QFileDialog.getExistingDirectory()
         if self.workdir:
             self.get_images()
