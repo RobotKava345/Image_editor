@@ -89,6 +89,17 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="forward_btn">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>icons/arrow-right.svg</normaloff>icons/arrow-right.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -100,17 +111,6 @@
            </size>
           </property>
          </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="rotate_left_btn">
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset>
-            <normaloff>../../Downloads/rotate-2.svg</normaloff>../../Downloads/rotate-2.svg</iconset>
-          </property>
-         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="rotate_right_btn">
@@ -134,7 +134,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Картинка</string>
+         <string/>
         </property>
        </widget>
       </item>
