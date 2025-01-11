@@ -6,7 +6,7 @@ import sys
 import os
 import tempfile
 
-from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox, QDialog, QVBoxLayout, QSlider, QPushButton
 from qt_material import apply_stylesheet
 #     # bright_obj = ImageEnhance.Brightness(img) # підсилювач яскравості
 #     # bright_img = bright_obj.enhance(2) # збільшуємо яскравість до 2
@@ -23,6 +23,29 @@ class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
         uic.loadUi('window.ui', self)
+
+class SliderDialog(QDialog):
+    def __init__(self, title, value=100):
+        super().__init__()
+        self.setWindowTitle(title)
+        
+        self.layout = QVBoxLayout()
+        self.slider = QSlider(Qt.Horizontal)
+        self.slider.setMinimum(0)
+        self.slider.setMaximum(200)
+        self.slider.setValue(value)
+        self.btns = QVBoxLayout()
+        self.ok = QPushButton("OK")
+        self.cancel = QPushButton("Скасувати")
+        self.btns.addWidget(self.ok)
+        self.btns.addWidget(self.cancel)
+        self.layout.addWidget(self.slider)
+        self.layout.addLayout(self.btns)
+        self.setLayout(self.layout)
+        self.ok.clicked.connect(self.accept)
+        self.cancel.clicked.connect(self.reject)
+       
+
 
 class ImageEditor():
     def __init__(self,):
@@ -53,6 +76,7 @@ class ImageEditor():
         self.ui.sharpen.triggered.connect(self.sharpen)
         self.ui.reset.triggered.connect(self.reset)
         self.ui.del_btn.clicked.connect(self.delete_file)
+        self.ui.brightness.triggered.connect(self.brightness_dialog)
 
 
     def get_images(self):
@@ -62,6 +86,8 @@ class ImageEditor():
             for file in filenames:
                 if file.endswith(".png") or file.endswith(".jpg") or file.endswith(".jpeg"):
                     self.folder_images.append(file)
+
+
 
     def open_folder(self):
         self.workdir = QFileDialog.getExistingDirectory()
@@ -184,7 +210,23 @@ class ImageEditor():
             self.image = self.image.filter(ImageFilter.SHARPEN) #чіткість
             self.add_to_history()
             self.show_image(self.temp_save())
-        
+    
+    def do_brightness(self, value):
+        if self.image:
+            value = value / 100
+            enhancer = ImageEnhance.Brightness(self.history[self.history_index])
+            self.image = enhancer.enhance(value)
+            self.show_image(self.temp_save())
+
+    def brightness_dialog(self):
+        if self.image:
+            dialog = SliderDialog("Редагування яскравості")
+            dialog.slider.valueChanged.connect(lambda value: self.do_brightness(value))
+        dialog.exec_()
+
+
+
+
 
 app = QApplication([])
 editor = ImageEditor()
